@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Prices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Update Gold & Silver Prices</h1>
+    </header>
+    <section class="update-form">
+        <form id="updateForm">
+            <div>
+                <label for="goldPricePerGram">Gold Price per Gram:</label>
+                <input type="number" id="goldPricePerGram" required>
+            </div>
+            <div>
+                <label for="goldPriceFor8Gram">Gold Price for 8 Gram:</label>
+                <input type="number" id="goldPriceFor8Gram" required>
+            </div>
+            <div>
+                <label for="silverPricePerGram">Silver Price per Gram:</label>
+                <input type="number" id="silverPricePerGram" required>
+            </div>
+            <div>
+                <label for="silverPriceFor8Gram">Silver Price for 8 Gram:</label>
+                <input type="number" id="silverPriceFor8Gram" required>
+            </div>
+            <button type="submit">Update Prices</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Doodle's Tech</p>
+    </footer>
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get the values from the form inputs
+            const goldPricePerGram = document.getElementById('goldPricePerGram').value;
+            const goldPriceFor8Gram = document.getElementById('goldPriceFor8Gram').value;
+            const silverPricePerGram = document.getElementById('silverPricePerGram').value;
+            const silverPriceFor8Gram = document.getElementById('silverPriceFor8Gram').value;
+            
+            // Update the local storage with the new values
+            localStorage.setItem('goldPricePerGram', goldPricePerGram);
+            localStorage.setItem('goldPriceFor8Gram', goldPriceFor8Gram);
+            localStorage.setItem('silverPricePerGram', silverPricePerGram);
+            localStorage.setItem('silverPriceFor8Gram', silverPriceFor8Gram);
+            
+            // Update the date of the last update
+            const date = new Date();
+            const dateString = date.toDateString();
+            localStorage.setItem('lastUpdate', dateString);
+            
+            alert('Prices updated successfully!');
+        });
+    </script>
+</body>
+</html>

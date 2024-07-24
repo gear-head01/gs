@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold & Silver Prices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gold & Silver Prices</h1>
+    </header>
+    <section class="prices">
+        <div class="price-box">
+            <h2>Gold</h2>
+            <table>
+                <tr>
+                    <th>Price per gram</th>
+                    <td id="goldPricePerGram">₹4,500</td>
+                </tr>
+                <tr>
+                    <th>Price for 8 Gram</th>
+                    <td id="goldPriceFor8Gram">₹1,25,000</td>
+                </tr>
+            </table>
+        </div>
+        <div class="price-box">
+            <h2>Silver</h2>
+            <table>
+                <tr>
+                    <th>Price per gram</th>
+                    <td id="silverPricePerGram">₹60</td>
+                </tr>
+                <tr>
+                    <th>Price for 8 Gram</th>
+                    <td id="silverPriceFor8Gram">₹1,800</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="update-date">
+        <p>Data updated on: <span id="update-date">16th July 2024</span></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Doodle's Tech</p>
+    </footer>
+    <script>
+        // Load the prices and date from local storage
+        const goldPricePerGram = localStorage.getItem('goldPricePerGram') || '4500';
+        const goldPriceFor8Gram = localStorage.getItem('goldPriceFor8Gram') || '125000';
+        const silverPricePerGram = localStorage.getItem('silverPricePerGram') || '60';
+        const silverPriceFor8Gram = localStorage.getItem('silverPriceFor8Gram') || '1800';
+        const lastUpdate = localStorage.getItem('lastUpdate') || '16th July 2024';
+
+        // Update the DOM elements with the loaded data
+        document.getElementById('goldPricePerGram').innerText = `₹${goldPricePerGram}`;
+        document.getElementById('goldPriceFor8Gram').innerText = `₹${goldPriceFor8Gram}`;
+        document.getElementById('silverPricePerGram').innerText = `₹${silverPricePerGram}`;
+        document.getElementById('silverPriceFor8Gram').innerText = `₹${silverPriceFor8Gram}`;
+        document.getElementById('update-date').innerText = lastUpdate;
+    </script>
+</body>
+</html>
