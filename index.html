@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <th>Price for 8 Gram</th>
-                    <td id="goldPricePerEightGram">₹1,25,000</td>
+                    <td id="goldPriceFor8Gram">₹1,25,000</td>
                 </tr>
             </table>
         </div>
@@ -33,7 +33,7 @@
                 </tr>
                 <tr>
                     <th>Price for 8 Gram</th>
-                    <td id="silverPricePerEightGram">₹1,800</td>
+                    <td id="silverPriceFor8Gram">₹1,800</td>
                 </tr>
             </table>
         </div>
@@ -47,16 +47,16 @@
     <script>
         // Load the prices and date from local storage
         const goldPricePerGram = localStorage.getItem('goldPricePerGram') || '4500';
-        const goldPricePerEightGram = localStorage.getItem('goldPricePerEightGram') || '125000';
+        const goldPriceFor8Gram = localStorage.getItem('goldPriceFor8Gram') || '125000';
         const silverPricePerGram = localStorage.getItem('silverPricePerGram') || '60';
-        const silverPricePerEightGram = localStorage.getItem('silverPricePerEightGram') || '1800';
+        const silverPriceFor8Gram = localStorage.getItem('silverPriceFor8Gram') || '1800';
         const lastUpdate = localStorage.getItem('lastUpdate') || '16th July 2024';
 
         // Update the DOM elements with the loaded data
         document.getElementById('goldPricePerGram').innerText = `₹${goldPricePerGram}`;
-        document.getElementById('goldPricePerEightGram').innerText = `₹${goldPricePerEightGram}`;
+        document.getElementById('goldPriceFor8Gram').innerText = `₹${goldPriceFor8Gram}`;
         document.getElementById('silverPricePerGram').innerText = `₹${silverPricePerGram}`;
-        document.getElementById('silverPricePerEightGram').innerText = `₹${silverPricePerEightGram}`;
+        document.getElementById('silverPriceFor8Gram').innerText = `₹${silverPriceFor8Gram}`;
         document.getElementById('update-date').innerText = lastUpdate;
     </script>
 </body>
